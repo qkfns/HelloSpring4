@@ -1,9 +1,16 @@
 package qkfns.basic;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import qkfns.bean.HelloSpring4Bean04;
+
+import javax.annotation.Resource;
 
 public class HelloSpring4App11 {
     // 스프링프레임워크를 사용하는 세번째 사례
@@ -31,6 +38,14 @@ public class HelloSpring4App11 {
     // 결국, 스프링 2.5부터 어노테이션을 지원하기 시작함함
 
     // 스프링 프레임워크 핵심 어노테이션
+    // @Resource : 지금은 중요하지 않음 구글링
+    // @Qualifier : 지금은 중요하지 않음 구글링
+    // @Autowired : DI 적용시 사용, 스프링 표준
+    // @Inject : DI 적용시 사용, 자바 표준
+    // @Component : 외부 라이브러리 객체에 사용
+    // @Service : 주로 서비스 객체 사용
+    // @Repository : 주로 DAO 객체에 사용
+    // @Controller : 주로 MVC 객체에 사용
 
     // 라이브러리
     // spring-beans  (repo.spring.io)
