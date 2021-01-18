@@ -25,7 +25,7 @@
         select userid,grade,regdate from member
     </select>
     <select id="selectOne" statementType="PREPARED"
-        resultType="String">
-        select userid, name, grade, points, regdate from member where userid = #{userid} limit 1
+        resultType="qkfns.data.vo.MemberVO">
+        select * from member where userid = #{userid} limit 1
     </select>
 </mapper>

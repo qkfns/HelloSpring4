@@ -2,7 +2,7 @@ package qkfns.data;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import qkfns.data.service.MemberService;
+import qkfns.data.service.MemberService03;
 
 
 public class HelloSpring4DataApp03 {
@@ -28,24 +28,24 @@ public class HelloSpring4DataApp03 {
     //                (MemberVO)
 
     public static void main(String[] args) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("spring4data02.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("spring4data03.xml");
 
-        MemberService msrv = (MemberService) ctx.getBean("msrv");
+        MemberService03 msrv03 = (MemberService03) ctx.getBean("msrv03");
 
         // 회원정보 생성
-        System.out.println( msrv.newMember() );
+        System.out.println( msrv03.newMember() );
 
         // 회원정보 조회 (아이디,등급,가입일)
-        System.out.println( msrv.readMember());
+        System.out.println( msrv03.readMember());
 
         // 회원정보 상세 조회 (아이디로 검색, 모든컬럼 출력)
-        System.out.println( msrv.readOneMember());
+        System.out.println( msrv03.readOneMember());
 
         // 회원정보 수정
-        System.out.println( msrv.modifyMember());
+        System.out.println( msrv03.modifyMember());
 
         // 회원정보 삭제
-        System.out.println(msrv.removeMember());
+        System.out.println(msrv03.removeMember());
 
     }
 }

@@ -2,16 +2,16 @@ package qkfns.data.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import qkfns.data.dao.MemberDAO;
+import qkfns.data.dao.MemberDAO03;
 import qkfns.data.vo.MemberVO;
 
 import java.util.List;
 
-@Service("msrv")
+@Service("msrv03")
 public class MemberService03 {
 
     @Autowired
-    private MemberDAO mdao;
+    private MemberDAO03 mdao03;
 
     // 회원 정보 생성
     public String newMember() {
@@ -25,7 +25,7 @@ public class MemberService03 {
         mvo.setPoints("1000");
         mvo.setRegdate("2021-01-18 10:55:00");
 
-        if (mdao.insertMember(mvo) > 0)
+        if (mdao03.insertMember(mvo) > 0)
             result = "회원 정보 생성 성공!";
 
 
@@ -42,7 +42,7 @@ public class MemberService03 {
         mvo.setGrade("Bronze");
         mvo.setPoints("0");
 
-        if(mdao.updateMember(mvo) > 0)
+        if(mdao03.updateMember(mvo) > 0)
             result = "회원 정보 수정 성공!";
 
         return result;
@@ -57,7 +57,7 @@ public class MemberService03 {
 
         String name = "일지매";
 
-        if(mdao.removeMember(name) > 0)
+        if(mdao03.removeMember(name) > 0)
             result = "회원 정보 삭제 성공!";
 
         return result;
@@ -68,7 +68,7 @@ public class MemberService03 {
         StringBuilder sb = new StringBuilder();
         String fmt = "%10s %10s %10s\n";
 
-        List<MemberVO> mvos = mdao.selectMember();
+        List<MemberVO> mvos = mdao03.selectMember();
 
         for(MemberVO m : mvos) {
             sb.append(String.format(fmt,m.getUserid(),
@@ -83,7 +83,7 @@ public class MemberService03 {
         String result ="";
         String fmt = "%10s %10s %10s %10s %10s \n";
 
-        MemberVO mvo = mdao.selectOneMember("xyz456");
+        MemberVO mvo = mdao03.selectOneMember("qkfns");
 
         result = String.format(fmt, mvo.getUserid(),
                 mvo.getName(), mvo.getGrade(), mvo.getPoints(),
